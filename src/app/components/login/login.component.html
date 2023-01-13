@@ -1,7 +1,7 @@
+<p-toast></p-toast>
+<app-spinner></app-spinner>
 <div>
     <div class="grid" style="margin: 5em 3em 3em 10em; width: 80%;">
-        <p-toast></p-toast>
-        <app-spinner></app-spinner>
         <div class="col-12 md:col-8" style="padding: 0rem!important;">
             <img src="assets/layout/images/inicio.jpg" class="imagen-login-m" style="border-radius: 2em 0em 0em 2em;" alt="Image" width="100%" height="100%">
         </div>
@@ -26,12 +26,30 @@
                     <br>
                 <br>
                     <button pButton pRipple style="background-color: var(--hover-seleccion-drawer)!important;"
-                            (click)="getLogin()"
+                            (click)="dialogCodigo = true"
                             label="Iniciar Sesion" class="w-full p-3 text-xl flex align-items-center justify-content-center">
                     </button>
                 </div>
             </div>
         </div>
-
     </div>
+    <!-- DIALOG DE VERIFICACION DE CODIGO -->
+    <p-dialog [(visible)]="dialogCodigo" [closable]="false" [style]="{width: '350px'}" [modal]="true" [draggable]="false" class="p-fluid">
+        <p-header>
+            <i class="pi pi-lock mx-2 font-bold"></i>
+            <span>Validar</span>
+        </p-header>
+        <ng-template pTemplate="content">
+            <div class="p-fluid" >
+                <div class="field col-12" >
+                    <label>Ingresa tu Codigo</label>
+                    <input type="number" pInputText [(ngModel)]="form_codigo" placeholder="ingrese codigo" >
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <button pButton label="Validar" icon="pi pi-lock" class="p-button-primary" (click)="dialogCodigo = false"></button>
+        </ng-template>
+    </p-dialog>
+     <!-- DIALOG DE VERIFICACION DE CODIGO -->
 </div>
