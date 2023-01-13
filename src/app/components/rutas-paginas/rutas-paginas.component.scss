@@ -1,0 +1,58 @@
+@media (max-width:992px) {
+    div {
+        display: none;
+    }
+}
+@media (min-width:993px) {
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            li {
+                margin-left: .5rem;
+                margin-right: .5rem;
+                &:first-child {
+                    cursor: pointer;
+                }
+                &:last-child {
+                    cursor: pointer;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .breadcrumb {
+        background: none;
+        font-size: 0.8em;
+        margin: 0;
+        top: -50px;;
+        a,
+        span {
+            color: darkgrey;
+        }
+        a:hover,
+        span:hover {
+            color: dimgrey;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+            float: left;
+            margin: 5px;
+        }
+        li:last-child {
+            margin-right: 20px;
+        }
+        li::after {
+            content: "->";
+            color: darkgrey;
+        }
+        li:last-child::after {
+            content: "";
+        }
+    }
+}

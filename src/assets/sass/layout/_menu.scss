@@ -1,0 +1,178 @@
+.layout-sidebar {
+    position: fixed;
+    width: 320px;
+    //height: calc(80vh - 1rem);
+    //height: auto; tenia asignado
+    height: calc(100vh - 9rem);
+    z-index: 999;
+    overflow-y: auto;
+    user-select: none;
+    top: 8rem;
+    left: 2rem;
+    transition: transform $transitionDuration, left $transitionDuration;
+    background-color: var(--surface-overlay);
+    /*background-color: #0E153B; relleno del menu drawer*/
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08)
+}
+.layout-sidebar::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.layout-sidebar::-webkit-scrollbar:vertical {
+    width:10px;
+}
+.layout-sidebar::-webkit-scrollbar-thumb {
+    background-color: #10CFC9;
+    border-radius: 20px;
+}
+.layout-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        &.layout-menuitem-category {
+            margin-top: .75rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .layout-menuitem-root-text {
+            text-transform: uppercase;
+            color:var(--tituloDrawer);
+            /*color: white; Titulos de drawer*/
+            font-weight: 700;
+            margin-bottom: .5rem;
+            font-size: .875rem;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color:var(--texto-submenu-drawer);
+            /*color: white; colos de letras de submenus(opciones)*/
+            transition: color $transitionDuration;
+            border-radius: $borderRadius;
+            padding: .75rem 1rem;
+            transition: background-color .15s;
+
+            span {
+                margin-left: 0.5rem;
+            }
+
+            .menuitem-toggle-icon {
+                margin-left: auto;
+            }
+
+            &:focus {
+                @include focused-inset();
+            }
+
+            &:hover {
+                font-weight: bold;
+                color: var(--surface-overlay);
+                background-color: var(--hover-seleccion-drawer);
+                /*background-color: #10CFC9; color de hover al pasar el mouse*/
+            }
+
+            &.router-link-exact-active {
+                font-weight: 700;
+                color: var(--hover-seleccion-drawer);
+                /*color: #10CFC9; Color del item seleccionado */
+            }
+            &.router-link-exact-active:hover {/*hover del item seleccionado*/
+                font-weight: 700;
+                color: var(--surface-overlay);
+            }
+        }
+
+        &.active-menuitem {
+            > a {
+                .menuitem-toggle-icon {
+                    &:before {
+                        content: '\e933';
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            &.layout-submenu-wrapper-enter {
+                max-height: 0;
+            }
+
+            &.layout-submenu-wrapper-enter-active {
+                overflow: hidden;
+                max-height: 1000px;
+                transition: max-height 1s ease-in-out;
+            }
+
+            &.layout-submenu-wrapper-enter-done {
+                transform: none;
+            }
+
+            &.layout-submenu-wrapper-exit {
+                max-height: 1000px;
+            }
+
+            &.layout-submenu-wrapper-exit-active {
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            ul {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+/****White sidebar******/
+/*.layout-sidebar{
+	background-color: #FAFAFA!important;
+}
+.layout-menu li a{
+	color:var(--surface-overlay);
+	transition: none;
+
+}
+.layout-menu li .layout-menuitem-root-text{
+	color:var(--surface-overlay)
+}
+
+.layout-menu li a.router-link-exact-active{
+	color: var(--surface-overlay)
+}
+
+.layout-menu li a:hover {
+    color: #ffffff;
+	font-weight:600;
+    background-color: var(--hover-seleccion-drawer);
+}
+.layout-menu li a.router-link-exact-active{
+    background-color: var(--hover-seleccion-drawer);	
+	font-weight:600;    
+}
+
+.layout-menu li a.router-link-exact-active:hover{
+	font-weight:600;
+}
+
+.version-color{
+    color: var(--primary-color)!important;
+}*/
+.version-color{
+    color: white !important;
+}
+/******* End white sidebar *******/

@@ -1,0 +1,68 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+          "@assets/*": [
+            "assets/*"
+          ],
+          "@env/*": [
+            "enviroments/*"
+          ],
+          "@app/*": [
+            "app/core/*"
+          ],
+          "@shared/*": [
+            "app/shared/*"
+          ],
+          "@components/*": [
+            "app/components/*"
+          ],
+          "@services/*": [
+            "app/services/*"
+          ],
+          "@modules/*": [
+            "app/modules/*"
+          ],
+          "@routes/*": [
+            "app/routes/*"
+          ],
+          "@data/*": [
+            "app/data/*"
+          ],
+          "@layouts/*": [
+            "app/layouts/*"
+          ],
+          "@settings/*": [
+            "app/settings/*"
+          ],
+          "@utils/*": [
+            "app/utils/*"
+          ],
+        },
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2017",
+        "module": "es2020",
+        "lib": [
+            "es2018",
+            "dom"
+        ]
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": false,
+        "strictInputAccessModifiers": false,
+        "strictTemplates": false
+    }
+}

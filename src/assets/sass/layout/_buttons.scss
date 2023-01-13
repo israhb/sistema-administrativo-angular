@@ -1,0 +1,73 @@
+@media (min-width:960px) {
+
+    ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+        margin-right: 1rem;
+    }
+
+    ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link :nth-child(2){
+        display: none;
+    }
+
+    ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link :nth-child(3){
+        display: none;
+    }
+
+    ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+        color: white;
+    }
+
+    //p-button-success
+    ::ng-deep .successButton > a {
+        background-color: #22C55E !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+    //p-button-help
+    ::ng-deep .helpButton > a {
+        background-color: #A855F7 !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+    //bg-teal-500
+    ::ng-deep .bgtealButton > a {
+        background-color: #009688 !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+    //p-button-danger
+    ::ng-deep .dangerButton > a {
+        background-color: #EF4444 !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+    //color uni azul marino
+    ::ng-deep .bluecaribeButton > a {
+        background-color: #0E153B !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+    //color BG Yellow
+    ::ng-deep .bgyellowButton > a {
+        background-color: #FBC02D !important;
+        span {
+            margin: 0 !important;
+            color: white !important;
+        }
+    }
+
+}

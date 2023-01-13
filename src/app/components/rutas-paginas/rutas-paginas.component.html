@@ -1,0 +1,12 @@
+<div class="container">
+    <ul>
+        <li> <a (click)="router.navigate(['/'])" class="pi pi-home" ></a> </li>
+        <li *ngIf="!section">Panel</li>
+        <span *ngIf="section" class="pi pi-chevron-right"></span>
+        <li *ngIf="section"> {{section}} </li>
+        <span *ngIf="section" class="pi pi-chevron-right"></span>
+        <li *ngIf="section"> {{page}} </li>
+        <span *ngIf="page2" class="pi pi-chevron-right"></span>
+        <li *ngIf="page2"> {{page2}} </li>
+    </ul>
+</div>

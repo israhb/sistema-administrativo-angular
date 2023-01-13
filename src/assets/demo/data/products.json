@@ -1,0 +1,67 @@
+{
+	"data": [
+		{
+			"No": "1",
+			"periodo": "202203",
+			"nivel": "MAE",
+			"solicitantes": "2022-03-25 - 2022-07-28",
+			"fecha": "1",
+			"resultados": "2022-06-24 - 2022-06-24",
+			"evaluacion": "2022-05-27 - 2022-05-27",
+			"activo": "S",
+			"actual": "0",
+			"tipo_beca": "Federal",
+			"tipo_pago": "Mensual",
+			"estado": "Baja temporal",
+			"situacion": "Regular",
+			"t_documento_nombre": "Impresiones para profesional asociado",
+			"t_certificado_nombre": "Constancia de Servicio Social",
+			"t_certificado_fecha": "Falta imprimir",
+			"liberado": "Sí",
+			"programa_educativo": "Gastronomía",
+			"opc_tabla_rol": "********* ADMISIONES *********"
+		},
+		{
+			"No": "2",
+			"periodo": "202202",
+			"nivel": "Lic",
+			"solicitantes": "2022-10-25 - 2022-10-18",
+			"fecha": "2",
+			"resultados": "2022-12-01 - 2022-12-01",
+			"evaluacion": "2022-12-01 - 2022-12-01",
+			"activo": "S",
+			"actual": "0",
+			"tipo_beca": "Privada",
+			"tipo_pago": "Bimestral",
+			"estado": "Baja definitiva",
+			"situacion": "Condicionado",
+			"t_documento_nombre": "Impresiones para Maestría SIN Cédula",
+			"t_documento_pago": "PAGADO",
+			"t_certificado_nombre": "Excención de examen para Licenciatura",
+			"t_certificado_fecha": "Falta imprimir",
+			"liberado": "No",
+			"programa_educativo": "Ingeniería Ambiental",
+			"opc_tabla_rol": "****** INSCRIPCIONES / REINSCRIPCIONES ******"
+		},
+		{
+			"No": "3",
+			"periodo": "202201",
+			"nivel": "Lic",
+			"solicitantes": "2022-02-14 - 2022-02-15",
+			"fecha": "1",
+			"resultados": "2022-08-03 - 2022-08-03",
+			"evaluacion": "2022-06-07 - 2022-06-25",
+			"activo": "N",
+			"actual": "0",
+			"tipo_beca": "Propia",
+			"tipo_pago": "Semestral",
+			"estado": "Inscrito",
+			"situacion": "Irregular",
+			"t_documento_nombre": "Impresiones para Licenciatura SIN Cédula",
+			"liberado": "Sí",
+			"programa_educativo": "Ingeniería en Datos e Inteligencia Organizacional",
+			"opc_tabla_rol": "********* INGLES *********"
+		}
+	]
+}
+

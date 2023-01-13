@@ -1,0 +1,23 @@
+<div class="layout-topbar">
+    <div>
+        <a class="p-link layout-menu-button layout-topbar-button mr-3" href="#" (click)="appMain.toggleMenu($event)">
+            <i class="pi pi-bars"></i>
+        </a>
+    </div>
+    <a class="layout-topbar-logo" routerLink="">
+        <span> Sistema Administrativos</span>
+    </a>
+
+    <a class="p-link layout-topbar-menu-button layout-topbar-button" href="#" (click)="appMain.toggleTopMenu($event)">
+        <i class="pi pi-ellipsis-v"></i>
+    </a>
+    <div class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active':appMain.topMenuActive}">
+        <div class="row">
+            <label pButton class="mr-2">
+                <i class="pi pi-user"></i>
+                <div class="mx-2">Usuario </div>
+            </label>
+        </div>
+        <button pButton  class="mr-2" icon="pi pi-sign-out" pTooltip="Cerrar sesión" tooltipPosition="bottom"></button>
+    </div>
+</div>
