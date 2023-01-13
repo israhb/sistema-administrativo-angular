@@ -51,6 +51,7 @@ export class UsuariosComponent implements OnInit {
               }
             }
         ];
+        this.getNivelesUSuario();
         this.refreshTable();
     }
     refreshTable(){
@@ -81,7 +82,9 @@ export class UsuariosComponent implements OnInit {
             this.form_model_password = null;
             this.form_model_telefono = null;
           }
-          this.getNivelesUSuario();
+          if(this.form_model_options_nivel == null || this.form_model_options_nivel == undefined ){
+            this.getNivelesUSuario();
+          }
           this.submitted = false;
           this.dialogAdd = true;
         }
@@ -118,10 +121,8 @@ export class UsuariosComponent implements OnInit {
             });
         }else{
             this.submitted = true;
-            if((this.form_model_nombre != undefined && this.form_model_nombre !=null) && (this.form_model_nivel != undefined && this.form_model_nivel !=null)
-            && (this.form_model_usuario != undefined && this.form_model_usuario !=null)  && (this.form_model_password != undefined && this.form_model_password !=null)
-            && (this.form_model_telefono != undefined && this.form_model_telefono !=null)
-            ){
+
+            if(this.validacionAddUpdate() ){
                 if(this.banAddUpdate){//actualizar
                     this.dialogAdd = false;
                     let json = {
@@ -129,7 +130,7 @@ export class UsuariosComponent implements OnInit {
                         us_nombre: this.form_model_nombre,
                         us_nivel: this.form_model_nivel,
                         us_usuario: this.form_model_usuario,
-                        us_password: this.form_model_password,
+                        //us_password: this.form_model_password,
                         us_telefono: this.form_model_telefono,
                         auth_token: this.toolsService.user_perfil['us_token']
                     };
@@ -180,6 +181,24 @@ export class UsuariosComponent implements OnInit {
                 }
             }else{
                 this.messageService.add({severity: 'error', summary: 'Error', detail: 'Faltan Campos por llenar!', life: 3000});
+            }
+        }
+    }
+    validacionAddUpdate(): boolean{
+        if(this.banAddUpdate){//modificar
+            if((this.form_model_nombre != undefined && this.form_model_nombre !=null) && (this.form_model_nivel != undefined && this.form_model_nivel !=null)
+                && (this.form_model_usuario != undefined && this.form_model_usuario !=null) && (this.form_model_telefono != undefined && this.form_model_telefono !=null)){
+                return true;
+            }else{
+                return false;
+            }
+        }else{//agregar
+            if((this.form_model_nombre != undefined && this.form_model_nombre !=null) && (this.form_model_nivel != undefined && this.form_model_nivel !=null)
+            && (this.form_model_usuario != undefined && this.form_model_usuario !=null)  && (this.form_model_password != undefined && this.form_model_password !=null)
+            && (this.form_model_telefono != undefined && this.form_model_telefono !=null)){
+                return true;
+            }else{
+                return false;
             }
         }
     }

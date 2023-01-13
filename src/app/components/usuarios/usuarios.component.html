@@ -91,7 +91,7 @@
                             </p-dropdown>
                             <small class="ng-dirty ng-invalid" *ngIf="submitted && !form_model_nivel">Campo requerido.</small>
                         </div>
-                        <div class="field col-6 ">
+                        <div class="field {{banAddUpdate ? 'col-12' : 'col-6'}} ">
                             <label>Usuario</label>
                             <input
                                 type="text"
@@ -101,7 +101,7 @@
                             />
                             <small class="ng-dirty ng-invalid" *ngIf="submitted && !form_model_usuario">Campo requerido.</small>
                         </div>
-                        <div class="field col-6 ">
+                        <div class="field col-6 " *ngIf="!banAddUpdate">
                             <label>Contraseña</label>
                             <input
                                 type="text" placeholder="Contraseña"
