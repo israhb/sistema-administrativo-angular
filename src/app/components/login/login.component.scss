@@ -1,0 +1,41 @@
+:host ::ng-deep .p-password input {
+    width: 100%;
+    padding:1rem;
+    }
+
+    :host ::ng-deep .pi-eye{
+      transform:scale(1.6);
+      margin-right: 1rem;
+      color: var(--primary-color) !important;
+    }
+
+    :host ::ng-deep .pi-eye-slash{
+      transform:scale(1.6);
+      margin-right: 1rem;
+      color: var(--primary-color) !important;
+    }
+
+    @media only screen and (max-width: 720px) {
+      :host ::ng-deep .grid{
+        margin: 0em!important;
+        width: 100%!important;
+      }
+      :host ::ng-deep #segundo-div-phone{
+        border-radius: 0em 0em 2em 2em!important;
+      }
+      :host ::ng-deep .imagen-login-m{
+        border-radius: 2em 2em 0em 0em!important;
+      }
+    }
+
+    @media only screen and (min-width: 730px) and (max-width: 920px) {
+      :host ::ng-deep .grid{
+        margin: 0em!important;
+        width: 100%!important;
+      }
+
+    }
+
+    :host ::ng-deep .fieldRecuperarPass:hover label {
+      color: #10CFC9!important;
+    }

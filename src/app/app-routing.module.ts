@@ -2,11 +2,13 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppMainComponent } from './app.main.component';
+import { LoginComponent } from '@components/login/login.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
+            {path: '', component: LoginComponent},
             {
-                path: '', component: AppMainComponent,
+                path: 'home', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent,
                         data: {
