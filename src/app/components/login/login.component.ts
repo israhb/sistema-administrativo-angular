@@ -17,6 +17,7 @@ export class LoginComponent {
     user: string;
     form_codigo: number;
     modelLogin: any;
+    dataUserPerfil: any;
     /******** modales ******** */
     dialogCodigo: boolean;
 
@@ -56,6 +57,32 @@ export class LoginComponent {
         }
     }
     sendCode(): void{
-        this.router.navigate(['/home']);
+        this.submitted = true;
+        let json = {
+            us_id: this.modelLogin.data.us_id,
+            us_codigo: this.form_codigo
+        }
+        console.log(json);
+        this.apisGeneralesService.sendCodeUser(JSON.parse(JSON.stringify(json))).subscribe({
+            next: (v) =>{
+                if(v != null ){
+                    this.dataUserPerfil = v;
+                    this.submitted = false;
+                }
+            },
+            error: (e) =>{
+                console.error(e);
+            },
+            complete: () => {
+                if(this.dataUserPerfil.success){
+                    this.toolsService.user_perfil = this.dataUserPerfil.data;
+                    this.toolsService.user_permisions = this.dataUserPerfil.permisos;
+                    console.log({perfil:this.toolsService.user_perfil, permisos: this.toolsService.user_permisions});
+                    this.router.navigate(['/home']);
+                }else{
+                    this.messageService.add({severity: 'error', summary: 'Error', detail: 'Codigo Incorrecto', life: 3000});
+                }
+            }
+        });
     }
 }
