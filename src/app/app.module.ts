@@ -120,6 +120,9 @@ import { RutasPaginasComponent } from './components/rutas-paginas/rutas-paginas.
 import { SpinnerComponent } from './shared/spinner/spinner/spinner.component';
 import { SharedModule } from '@shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { LlamadasComponent } from './components/llamadas/llamadas.component';
+import { OperadoresComponent } from './components/operadores/operadores.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -232,7 +235,10 @@ import { LoginComponent } from './components/login/login.component';
         DashboardComponent,
         RutasPaginasComponent,
         SpinnerComponent,
-        LoginComponent
+        LoginComponent,
+        UsuariosComponent,
+        LlamadasComponent,
+        OperadoresComponent
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

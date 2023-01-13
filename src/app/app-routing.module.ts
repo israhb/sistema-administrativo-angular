@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppMainComponent } from './app.main.component';
 import { LoginComponent } from '@components/login/login.component';
+import { UsuariosComponent } from '@components/usuarios/usuarios.component';
+import { LlamadasComponent } from '@components/llamadas/llamadas.component';
+import { OperadoresComponent } from '@components/operadores/operadores.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -10,10 +13,36 @@ import { LoginComponent } from '@components/login/login.component';
             {
                 path: 'home', component: AppMainComponent,
                 children: [
-                    {path: '', component: DashboardComponent,
+                    {
+                        path: '', component: DashboardComponent,
                         data: {
                             page: 'Panel Principal'
                         }
+                    },
+                     //new moduls
+                    {
+                        path: 'usuarios',
+                        component: UsuariosComponent,
+                        data: {
+                            section: 'Usuarios',
+                            page: 'Listado de Usuarios'
+                        },
+                    },
+                    {
+                        path: 'llamadas',
+                        component: LlamadasComponent,
+                        data: {
+                            section: 'Llamadas',
+                            page: 'Listado de Llamadas'
+                        },
+                    },
+                    {
+                        path: 'operadores',
+                        component: OperadoresComponent,
+                        data: {
+                            section: 'Operadores',
+                            page: 'Listado de Operadores'
+                        },
                     },
                 ],
             },
