@@ -26,7 +26,7 @@
                     <br>
                 <br>
                     <button pButton pRipple style="background-color: var(--hover-seleccion-drawer)!important;"
-                            (click)="dialogCodigo = true"
+                            (click)="getLogin()"
                             label="Iniciar Sesion" class="w-full p-3 text-xl flex align-items-center justify-content-center">
                     </button>
                 </div>
@@ -48,7 +48,7 @@
             </div>
         </ng-template>
         <ng-template pTemplate="footer">
-            <button pButton label="Validar" icon="pi pi-lock" class="p-button-primary" (click)="dialogCodigo = false"></button>
+            <button pButton label="Validar" icon="pi pi-lock" class="p-button-primary" (click)="sendCode()"></button>
         </ng-template>
     </p-dialog>
      <!-- DIALOG DE VERIFICACION DE CODIGO -->

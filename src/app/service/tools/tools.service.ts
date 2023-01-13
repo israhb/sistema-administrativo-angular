@@ -18,7 +18,6 @@ export class ToolsService {
         }
         return jsonFinal;
     }
-    user_codigo: any;
     user_perfil: any[];
     user_permisions: any[];
 }
