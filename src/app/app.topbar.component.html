@@ -15,9 +15,11 @@
         <div class="row">
             <label pButton class="mr-2">
                 <i class="pi pi-user"></i>
-                <div class="mx-2">Usuario </div>
+                <div class="mx-2">
+                    <label>{{usuario}}</label>
+                </div>
             </label>
         </div>
-        <button pButton  class="mr-2" icon="pi pi-sign-out" pTooltip="Cerrar sesión" tooltipPosition="bottom"></button>
+        <button pButton class="mr-2" icon="pi pi-sign-out" pTooltip="Cerrar sesión" tooltipPosition="bottom" (click)="cerrarSession()"></button>
     </div>
 </div>

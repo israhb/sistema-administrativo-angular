@@ -6,6 +6,7 @@ import { LoginComponent } from '@components/login/login.component';
 import { UsuariosComponent } from '@components/usuarios/usuarios.component';
 import { LlamadasComponent } from '@components/llamadas/llamadas.component';
 import { OperadoresComponent } from '@components/operadores/operadores.component';
+import { RolesModulosGuard } from './guards/roles-modulos.guard';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -17,7 +18,8 @@ import { OperadoresComponent } from '@components/operadores/operadores.component
                         path: '', component: DashboardComponent,
                         data: {
                             page: 'Panel Principal'
-                        }
+                        },
+                        canActivate: [RolesModulosGuard]
                     },
                      //new moduls
                     {
@@ -27,6 +29,7 @@ import { OperadoresComponent } from '@components/operadores/operadores.component
                             section: 'Usuarios',
                             page: 'Listado de Usuarios'
                         },
+                        canActivate: [RolesModulosGuard]
                     },
                     {
                         path: 'llamadas',
@@ -35,6 +38,7 @@ import { OperadoresComponent } from '@components/operadores/operadores.component
                             section: 'Llamadas',
                             page: 'Listado de Llamadas'
                         },
+                        canActivate: [RolesModulosGuard]
                     },
                     {
                         path: 'operadores',
@@ -43,6 +47,7 @@ import { OperadoresComponent } from '@components/operadores/operadores.component
                             section: 'Operadores',
                             page: 'Listado de Operadores'
                         },
+                        canActivate: [RolesModulosGuard]
                     },
                 ],
             },

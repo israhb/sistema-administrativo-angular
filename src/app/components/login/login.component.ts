@@ -68,6 +68,8 @@ export class LoginComponent {
                 if(v != null ){
                     this.dataUserPerfil = v;
                     this.submitted = false;
+                    this.password = null;
+                    this.user = null;
                 }
             },
             error: (e) =>{
