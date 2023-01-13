@@ -123,6 +123,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { LlamadasComponent } from './components/llamadas/llamadas.component';
 import { OperadoresComponent } from './components/operadores/operadores.component';
+import { RolesModulosDirective } from './directives/roles-modulos/roles-modulos.directive';
 @NgModule({
     imports: [
         BrowserModule,
@@ -238,7 +239,8 @@ import { OperadoresComponent } from './components/operadores/operadores.componen
         LoginComponent,
         UsuariosComponent,
         LlamadasComponent,
-        OperadoresComponent
+        OperadoresComponent,
+        RolesModulosDirective
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
