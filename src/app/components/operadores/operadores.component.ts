@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MessageService, MenuItem } from 'primeng/api';
 import { Operador } from 'app/api/Operador';
 import { ToolsService } from 'app/service/tools/tools.service';
 import { ApisGeneralesService } from 'app/service/generales/apis-generales.service';
 import { Campania } from 'app/api/Campania';
+import { RolesPermisosDirective } from 'app/directives/roles-permisos/roles-permisos.directive';
 
 @Component({
   selector: 'app-operadores',
   templateUrl: './operadores.component.html',
-  providers: [MessageService],
+  providers: [MessageService, RolesPermisosDirective],
+
   styleUrls: ['./operadores.component.scss',
   '../../../assets/sass/layout/_buttons.scss']
 })
@@ -37,19 +39,22 @@ export class OperadoresComponent implements OnInit {
        private messageService: MessageService,
        private toolsService:ToolsService,
        private apisGeneralesService:ApisGeneralesService,
+       private rolesPermisosDirective:RolesPermisosDirective,
    ) { }
 
    ngOnInit(): void {
        this.itemsMenuOptions = [
-           {
-             label: '',
-             icon: 'pi pi-plus',
-             title: 'Agregar',
-             styleClass: 'successButton',
-             command: () => {
-               this.openAddUpdateDialog(false, {}, false);
-             }
-           }
+        this.rolesPermisosDirective.checkPermisos?.('add') ?
+            {
+
+                label: '',
+                icon: 'pi pi-plus',
+                title: 'Agregar',
+                styleClass: 'successButton',
+                command: () => {
+                    this.openAddUpdateDialog(false, {}, false);
+                }
+            } : {},
        ];
        this.getCampanias();
        this.refreshTable();

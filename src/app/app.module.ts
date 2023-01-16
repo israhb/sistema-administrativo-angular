@@ -124,6 +124,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { LlamadasComponent } from './components/llamadas/llamadas.component';
 import { OperadoresComponent } from './components/operadores/operadores.component';
 import { RolesModulosDirective } from './directives/roles-modulos/roles-modulos.directive';
+import { RolesPermisosDirective } from './directives/roles-permisos/roles-permisos.directive';
+import { RolesPermisosHtmlDirective } from './directives/roles-permisos-html/roles-permisos-html.directive';
 @NgModule({
     imports: [
         BrowserModule,
@@ -240,7 +242,9 @@ import { RolesModulosDirective } from './directives/roles-modulos/roles-modulos.
         UsuariosComponent,
         LlamadasComponent,
         OperadoresComponent,
-        RolesModulosDirective
+        RolesModulosDirective,
+        RolesPermisosDirective,
+        RolesPermisosHtmlDirective
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

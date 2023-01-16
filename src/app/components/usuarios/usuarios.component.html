@@ -4,14 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="col-12">
-                <p-menubar [model]="itemsMenuOptions">
-                    <ng-template pTemplate="end">
-                        <span class="block mt-2 md:mt-0 p-input-icon-left">
-                            <i class="pi pi-search"></i>
-                            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
-                        </span>
-                    </ng-template>
-                </p-menubar>
+                <p-menubar [model]="itemsMenuOptions"></p-menubar>
             </div>
             <!-- data exported to excel -->
             <p-table
@@ -29,6 +22,12 @@
                 dataKey="numeracion"
                 styleClass="p-datatable-sm"
             >
+                <ng-template pTemplate="caption">
+                    <span class="block mt-2 md:mt-0 p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
+                    </span>
+                </ng-template>
                 <ng-template pTemplate="header">
                     <tr class="text-sm">
                         <th pSortableColumn="numeracion">No<p-sortIcon field="numeracion"></p-sortIcon></th>
@@ -54,8 +53,8 @@
                         </td>
                         <td style="flex: 1;">
                             <div class="flex align-items-center justify-content-center">
-                                <button [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="openAddUpdateDialog(true, usuario, false)" pTooltip="Modificar"></button>
-                                <button [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="openAddUpdateDialog(false, usuario, true)" pTooltip="Eliminar"></button>
+                                <button *appRolesPermisosHtml="'upd'" [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="openAddUpdateDialog(true, usuario, false)" pTooltip="Modificar"></button>
+                                <button *appRolesPermisosHtml="'del'" [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="openAddUpdateDialog(false, usuario, true)" pTooltip="Eliminar"></button>
                             </div>
                         </td>
                     </tr>

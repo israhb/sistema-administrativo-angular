@@ -4,11 +4,12 @@ import { ToolsService } from 'app/service/tools/tools.service';
 import { ApisGeneralesService } from 'app/service/generales/apis-generales.service';
 import { Usuarios } from 'app/api/Usuarios';
 import { Niveles } from 'app/api/Niveles';
+import { RolesPermisosDirective } from 'app/directives/roles-permisos/roles-permisos.directive';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
-  providers: [MessageService],
+  providers: [MessageService, RolesPermisosDirective],
   styleUrls: [
     './usuarios.component.scss',
     '../../../assets/sass/layout/_buttons.scss'
@@ -37,10 +38,12 @@ export class UsuariosComponent implements OnInit {
         private messageService: MessageService,
         private toolsService:ToolsService,
         private apisGeneralesService:ApisGeneralesService,
+        private rolesPermisosDirective:RolesPermisosDirective,
     ) { }
 
     ngOnInit(): void {
         this.itemsMenuOptions = [
+            this.rolesPermisosDirective.checkPermisos?.('add') ?
             {
               label: '',
               icon: 'pi pi-plus',
@@ -49,7 +52,7 @@ export class UsuariosComponent implements OnInit {
               command: () => {
                 this.openAddUpdateDialog(false, {}, false);
               }
-            }
+            } : {},
         ];
         this.getNivelesUSuario();
         this.refreshTable();
