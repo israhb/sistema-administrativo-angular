@@ -53,4 +53,10 @@ export class ApisGeneralesService {
         return this.http.post( environment.baseUrl+'ccListarCampanias', json, {});
     }
     /********* COMAPAÑA ************** */
+
+    /********* CLIENTES ************** */
+    postListarClientes(json: JSON){
+        return this.http.post( environment.baseUrl+'ccListarClientes', json, {});
+    }
+    /********* CLIENTES ************** */
 }

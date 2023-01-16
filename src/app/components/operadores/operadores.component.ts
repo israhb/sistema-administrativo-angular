@@ -10,7 +10,6 @@ import { RolesPermisosDirective } from 'app/directives/roles-permisos/roles-perm
   selector: 'app-operadores',
   templateUrl: './operadores.component.html',
   providers: [MessageService, RolesPermisosDirective],
-
   styleUrls: ['./operadores.component.scss',
   '../../../assets/sass/layout/_buttons.scss']
 })

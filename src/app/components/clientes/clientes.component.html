@@ -1,0 +1,69 @@
+<p-toast></p-toast>
+<app-spinner></app-spinner>
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <div class="col-12">
+                <p-menubar [model]="itemsMenuOptions"></p-menubar>
+            </div>
+            <!-- data exported to excel -->
+            <p-table
+                #dt
+                [value]="usuarios"
+                responsiveLayout="scroll"
+                [globalFilterFields]="['cl_nombre', 'cl_telefono', 'cl_correo', 'cl_nombre_contacto']"
+                [rows]="10"
+                [paginator]="true"
+                [rowsPerPageOptions]="[10, 20, 30, 50, 100]"
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+                selectionMode="multiple"
+                [rowHover]="true"
+                dataKey="numeracion"
+                styleClass="p-datatable-sm"
+            >
+                <ng-template pTemplate="caption">
+                    <span class="block mt-2 md:mt-0 p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr class="text-sm">
+                        <th pSortableColumn="numeracion">No<p-sortIcon field="numeracion"></p-sortIcon></th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Nombre de Contacto</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-usuario >
+                    <tr class="text-sm" >
+                        <td style="width:5%; min-width:5rem;">
+                            {{ usuario.numeracion }}
+                        </td>
+                        <td style="width:24%; min-width:10rem;">
+                            {{ usuario.cl_nombre }}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            {{ usuario.cl_telefono }}
+                        </td>
+                        <td style="width:24%; min-width:10rem;">
+                            {{ usuario.cl_correo}}
+                        </td>
+                        <td style="width:24%; min-width:10rem;">
+                            {{ usuario.cl_nombre_contacto}}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            <div class="flex align-items-center justify-content-center">
+                                <button *appRolesPermisosHtml="'upd'" [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="openAddUpdateDialog(true, usuario, false)" pTooltip="Modificar"></button>
+                                <button *appRolesPermisosHtml="'del'" [style]="{height:'25px', width:'25px'}" pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="openAddUpdateDialog(false, usuario, true)" pTooltip="Eliminar"></button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

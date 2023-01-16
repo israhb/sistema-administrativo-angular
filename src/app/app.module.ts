@@ -126,6 +126,7 @@ import { OperadoresComponent } from './components/operadores/operadores.componen
 import { RolesModulosDirective } from './directives/roles-modulos/roles-modulos.directive';
 import { RolesPermisosDirective } from './directives/roles-permisos/roles-permisos.directive';
 import { RolesPermisosHtmlDirective } from './directives/roles-permisos-html/roles-permisos-html.directive';
+import { ClientesComponent } from './components/clientes/clientes.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -244,7 +245,8 @@ import { RolesPermisosHtmlDirective } from './directives/roles-permisos-html/rol
         OperadoresComponent,
         RolesModulosDirective,
         RolesPermisosDirective,
-        RolesPermisosHtmlDirective
+        RolesPermisosHtmlDirective,
+        ClientesComponent
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

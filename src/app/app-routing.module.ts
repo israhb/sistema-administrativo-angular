@@ -7,6 +7,7 @@ import { UsuariosComponent } from '@components/usuarios/usuarios.component';
 import { LlamadasComponent } from '@components/llamadas/llamadas.component';
 import { OperadoresComponent } from '@components/operadores/operadores.component';
 import { RolesModulosGuard } from './guards/roles-modulos.guard';
+import { ClientesComponent } from '@components/clientes/clientes.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -37,6 +38,15 @@ import { RolesModulosGuard } from './guards/roles-modulos.guard';
                         data: {
                             section: 'Llamadas',
                             page: 'Listado de Llamadas'
+                        },
+                        canActivate: [RolesModulosGuard]
+                    },
+                    {
+                        path: 'clientes',
+                        component: ClientesComponent,
+                        data: {
+                            section: 'Clientes',
+                            page: 'Listado de Clientes'
                         },
                         canActivate: [RolesModulosGuard]
                     },
