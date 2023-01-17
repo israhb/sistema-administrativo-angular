@@ -223,5 +223,5 @@ export class OperadoresComponent implements OnInit {
        this.form_model_telefono = null;
        this.form_model_correo = null;
        this.form_model_campania = null;
-   }
+    }
 }

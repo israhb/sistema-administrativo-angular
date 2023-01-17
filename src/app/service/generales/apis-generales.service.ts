@@ -58,5 +58,12 @@ export class ApisGeneralesService {
     postListarClientes(json: JSON){
         return this.http.post( environment.baseUrl+'ccListarClientes', json, {});
     }
+    postRegistrarCliente(json: JSON){
+        return this.http.post( environment.baseUrl+'ccRegistrarCliente', json, {});
+    }
+    postUpdateCliente(json: JSON){
+        return this.http.post( environment.baseUrl+'UpdateCliente', json, {});
+    }
+
     /********* CLIENTES ************** */
 }
