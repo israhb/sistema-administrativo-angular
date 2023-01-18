@@ -42,10 +42,8 @@ export class OperadoresComponent implements OnInit {
    ) { }
 
    ngOnInit(): void {
-       this.itemsMenuOptions = [
-        this.rolesPermisosDirective.checkPermisos?.('add') ?
+        let btnAdd = this.rolesPermisosDirective.checkPermisos?.('add') ?
             {
-
                 label: '',
                 icon: 'pi pi-plus',
                 title: 'Agregar',
@@ -53,8 +51,10 @@ export class OperadoresComponent implements OnInit {
                 command: () => {
                     this.openAddUpdateDialog(false, {}, false);
                 }
-            } : {},
-       ];
+            } : {};
+        this.itemsMenuOptions = [
+            btnAdd,
+        ];
        this.getCampanias();
        this.refreshTable();
    }

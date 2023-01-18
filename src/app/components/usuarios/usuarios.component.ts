@@ -42,17 +42,18 @@ export class UsuariosComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.itemsMenuOptions = [
-            this.rolesPermisosDirective.checkPermisos?.('add') ?
+        let btnAdd =  this.rolesPermisosDirective.checkPermisos?.('add') ?
             {
-              label: '',
-              icon: 'pi pi-plus',
-              title: 'Agregar',
-              styleClass: 'successButton',
-              command: () => {
-                this.openAddUpdateDialog(false, {}, false);
-              }
-            } : {},
+                label: '',
+                icon: 'pi pi-plus',
+                title: 'Agregar',
+                styleClass: 'successButton',
+                command: () => {
+                    this.openAddUpdateDialog(false, {}, false);
+                }
+            } : {};
+        this.itemsMenuOptions = [
+           btnAdd,
         ];
         this.getNivelesUSuario();
         this.refreshTable();
